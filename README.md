@@ -43,10 +43,4 @@ npx setup --username userName --key accessKey
 - To test on a different set of browsers, check out our [platform configurator](https://browserstack.com/automate/capabilities)
 
 ## Additional Resources
-
----
-
-- [Documentation for writing Automate test scripts in JestJS](https://browserstack.com/docs/automate/selenium/getting-started/nodejs/jest-js)
-- [Browsers & mobile devices for selenium testing on BrowserStack](https://www.browserstack.com/list-of-browsers-and-platforms?product=automate)
-- [Using REST API to access information about your tests via the command-line interface](https://www.browserstack.com/automate/rest-api)
 # test-git
