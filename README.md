@@ -43,4 +43,3 @@ npx setup --username userName --key accessKey
 - To test on a different set of browsers, check out our [platform configurator](https://browserstack.com/automate/capabilities)
 
 ## Additional Resources
-# test-git
