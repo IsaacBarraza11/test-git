@@ -21,6 +21,14 @@ class LoginPage {
     async assertResult(){
         return await this.driver.findElement(By.css('h1.post-title')).getText();
     }
+
+    async logout (){
+        await this.driver.findElement(By.xpath("//a[text()='Log out']")).click();
+    }
+
+    async assertLogout () {
+        return await this.driver.getTitle();
+    }
 }
 
 module.exports = LoginPage;

@@ -43,8 +43,13 @@ config.browsers.forEach((caps) => {
       await loginPage.password('Password123');
       await loginPage.submitButton();
 
-      const result = await loginPage.assertResult();
+      let result = await loginPage.assertResult();
       expect(result).to.include('Logged In Successfully');
+
+      await loginPage.logout();
+      let resultLogout = await loginPage.assertLogout();
+      expect(resultLogout).to.include('Test Login | Practice Test Automation');
+      //a[text()='Log out']
     });
   });
 });
