@@ -1,0 +1,35 @@
+{
+  "name": "jest-js-browserstack",
+  "version": "1.0.0",
+  "author": "BrowserStack",
+  "license": "MIT",
+  "description": "Selenium examples using JestJS and BrowserStack",
+  "keywords": [
+    "browserstack",
+    "selenium",
+    "automate",
+    "examples",
+    "jest",
+    "jestjs"
+  ],
+  "devDependencies": {
+    "@types/jest": "^27.4.0",
+    "browserstack-node-sdk": "^1.37.0",
+    "chai": "^5.2.1",
+    "jest": "^27.4.7",
+    "mocha": "^11.7.1",
+    "selenium-webdriver": "^4.34.0"
+  },
+  "dependencies": {
+    "browserstack-local": "^1.4.8",
+    "dotenv": "^16.0.0",
+    "js-yaml": "^4.1.0"
+  },
+  "scripts": {
+    "sample-test": "browserstack-node-sdk jest src/sample.test.js",
+    "sample-local-test": "browserstack-node-sdk jest src/sample-local.test.js",
+    "postinstall": "npm update browserstack-node-sdk",
+    "test": "mocha ./tests/*.js"
+  },
+  "main": "jest.config.js"
+}
