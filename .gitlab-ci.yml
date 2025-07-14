@@ -12,6 +12,7 @@ cache:
     - node_modules/
 
 before_script:
+  - apt-get update && apt-get install -y default-jre
   - npm ci
 
 test_regression:
