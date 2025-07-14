@@ -53,7 +53,7 @@ config.browsers.forEach((caps) => {
       expect(resultLogout).to.include('Test Login | Practice Test Automation');
     });
 
-    it('[smoke] Debe iniciar sesión correctamente', async function () {
+    it('[smoke] No Debe iniciar sesión correctamente', async function () {
       await loginPage.userName('student');
       await loginPage.password('Password');
       await loginPage.submitButton();
