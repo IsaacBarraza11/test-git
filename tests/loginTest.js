@@ -3,6 +3,8 @@ const yaml = require('js-yaml');
 const { Builder } = require('selenium-webdriver');
 const { expect } = require('chai');
 const LoginPage = require('./objects/object.js');
+const { addFeature, addSeverity } = require('allure-mocha/runtime');
+const { MochaAllure } = require('allure-mocha');
 
 // Cargar el YAML
 const config = yaml.load(fs.readFileSync('./tests/objects/capabilities.yaml', 'utf8'));
@@ -38,9 +40,22 @@ config.browsers.forEach((caps) => {
       }
     });
 
-    it('Debe iniciar sesión correctamente', async function () {
+    it('[regression] Debe iniciar sesión correctamente', async function () {
       await loginPage.userName('student');
       await loginPage.password('Password123');
+      await loginPage.submitButton();
+
+      let result = await loginPage.assertResult();
+      expect(result).to.include('Logged In Successfully');
+
+      await loginPage.logout();
+      let resultLogout = await loginPage.assertLogout();
+      expect(resultLogout).to.include('Test Login | Practice Test Automation');
+    });
+
+    it('[smoke] Debe iniciar sesión correctamente', async function () {
+      await loginPage.userName('student');
+      await loginPage.password('Password');
       await loginPage.submitButton();
 
       let result = await loginPage.assertResult();
