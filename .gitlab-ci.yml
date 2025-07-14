@@ -18,7 +18,7 @@ before_script:
 test_regression:
   stage: test
   script:
-    - npm run test:regression
+    - npx mocha tests/loginTest.js --grep "\[regression\]"
     - npm run allure:generate
   artifacts:
     when: always
