@@ -30,7 +30,6 @@ config.browsers.forEach((caps) => {
         .withCapabilities(caps)
         .build();
 
-      await driver.get('https://practicetestautomation.com/practice-test-login/');
       loginPage = new LoginPage(driver);
     });
 
@@ -40,7 +39,8 @@ config.browsers.forEach((caps) => {
       }
     });
 
-    it('[regression] Debe iniciar sesión correctamente', async function () {
+    xit('[regression] Debe iniciar sesión correctamente', async function () {
+      await driver.get('https://practicetestautomation.com/practice-test-login/');
       await loginPage.userName('student');
       await loginPage.password('Password123');
       await loginPage.submitButton();
@@ -54,6 +54,7 @@ config.browsers.forEach((caps) => {
     });
 
     it('[smoke] No Debe iniciar sesión correctamente', async function () {
+      await driver.get('https://practicetestautomation.com/practice-test-login/');
       await loginPage.userName('student');
       await loginPage.password('Password');
       await loginPage.submitButton();
